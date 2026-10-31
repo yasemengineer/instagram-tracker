@@ -1,0 +1,407 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 420px;
+    min-height: 500px;
+    font-family: Arial, sans-serif;
+    background: #f7f5fc;
+    color: #29243a;
+}
+
+.app {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #8b5cf6, #5b21b6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.header h1 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.header p {
+    color: #827b91;
+    font-size: 12px;
+}
+
+/* İstatistik kartları */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 13px 8px;
+    text-align: center;
+    border: 1px solid #eeeaf5;
+}
+
+.stat-card span {
+    display: block;
+    font-size: 23px;
+    font-weight: bold;
+    color: #7441d8;
+    margin-bottom: 5px;
+}
+
+.stat-card small {
+    font-size: 11px;
+    color: #817b8e;
+}
+
+.stat-card.pending span {
+    color: #d68b26;
+}
+
+.stat-card.requested span {
+    color: #d64545;
+}
+
+.stat-card.following span {
+    color: #3478d4;
+}
+
+/* Genel bölümler */
+
+section {
+    margin-bottom: 22px;
+}
+
+h2 {
+    font-size: 14px;
+    margin-bottom: 11px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #e5e0ef;
+    border-radius: 9px;
+    background: white;
+    font-size: 12px;
+    outline: none;
+    margin-bottom: 9px;
+    color: #29243a;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #9065e9;
+}
+
+textarea {
+    resize: vertical;
+    font-family: Arial, sans-serif;
+}
+
+input[type="file"] {
+    font-size: 11px;
+}
+
+/* Butonlar */
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 9px;
+    font-weight: bold;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.primary-button,
+.secondary-button {
+    width: 100%;
+    padding: 11px;
+    font-size: 12px;
+}
+
+.primary-button {
+    background: #7546d7;
+    color: white;
+}
+
+.secondary-button {
+    background: #eae2fc;
+    color: #6338b5;
+}
+
+/* Kullanıcı listesi */
+
+.list-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-heading span {
+    font-size: 11px;
+    color: #898296;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 4px 0 12px;
+}
+
+.filter {
+    padding: 7px 10px;
+    background: #ebe7f3;
+    color: #70677e;
+    font-size: 10px;
+}
+
+.filter.active {
+    background: #7546d7;
+    color: white;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.user-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: white;
+    border: 1px solid #eeeaf5;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.user-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.user-info small {
+    display: block;
+    margin-top: 4px;
+    color: #91899c;
+    font-size: 10px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+/* Durum seçimi */
+
+.status-select {
+    max-width: 120px;
+    padding: 7px 5px;
+    border: none;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.status-select.pending {
+    background: #fff1d9;
+    color: #b87917;
+}
+
+.status-select.requested {
+    background: #fce8eb;
+    color: #c44457;
+}
+
+.status-select.following {
+    background: #e4efff;
+    color: #3478d4;
+}
+
+/* Geçmiş */
+
+.history-button {
+    background: #eee8fa;
+    color: #7546d7;
+    padding: 7px 8px;
+    font-size: 10px;
+}
+
+.history-panel {
+    display: none;
+    width: 100%;
+    border-top: 1px solid #eeeaf5;
+    margin-top: 5px;
+    padding-top: 10px;
+}
+
+.history-panel.visible {
+    display: block;
+}
+
+.history-title {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 9px;
+}
+
+.history-entry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    padding: 8px;
+    margin-bottom: 6px;
+    background: #f8f6fc;
+    border-radius: 7px;
+}
+
+.history-status {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.history-source {
+    font-size: 9px;
+    color: #7546d7;
+    text-align: right;
+}
+
+.history-date {
+    grid-column: 1 / -1;
+    font-size: 10px;
+    color: #91899c;
+}
+
+/* Silme */
+
+.delete-button {
+    background: #fce8eb;
+    color: #c44457;
+    padding: 7px 9px;
+    font-size: 10px;
+}
+
+/* Boş liste */
+
+.empty-message {
+    text-align: center;
+    padding: 22px 10px;
+    color: #9991a6;
+    font-size: 12px;
+}
+
+/* Yedekleme alanı */
+
+.backup-section {
+    background: white;
+    border: 1px solid #eeeaf5;
+    border-radius: 12px;
+    padding: 13px;
+    margin-bottom: 20px;
+}
+
+.backup-section h2 {
+    margin-bottom: 12px;
+}
+
+.backup-button,
+.restore-button,
+.export-button {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 9px;
+    font-weight: bold;
+}
+
+.backup-button {
+    background: #eae2fc;
+    color: #6338b5;
+}
+
+.restore-button {
+    background: #e4efff;
+    color: #3478d4;
+    cursor: pointer;
+}
+
+.export-button {
+    background: #29243a;
+    color: white;
+    margin-top: 8px;
+}
+
+.backup-info {
+    font-size: 10px;
+    color: #91899c;
+    line-height: 1.6;
+    margin-top: 9px;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #e9e4f0;
+    padding-top: 14px;
+    text-align: center;
+}
+
+footer p {
+    color: #aaa3b5;
+    font-size: 10px;
+}

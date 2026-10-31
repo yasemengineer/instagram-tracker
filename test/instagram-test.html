@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Instagram Tracker Test</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f3fa;
+            padding: 30px;
+            color: #29243a;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .user {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .username {
+            color: #7546d7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .follow-button {
+            background: #7546d7;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .follow-button:hover {
+            opacity: 0.85;
+        }
+
+        .description {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container" role="dialog">
+        <h2>Instagram Tracker Test</h2>
+
+        <p class="description">
+            Bu sayfa Instagram Tracker'ın otomatik kullanıcı
+            algılama ve durum takibi özelliklerini test etmek
+            için hazırlanmıştır.
+        </p>
+
+        <div role="dialog" aria-label="Takipçi listesi">
+
+            <div class="user">
+                <a class="username" href="/psikoloji_test1/">
+                    @psikoloji_test1
+                </a>
+
+                <button class="follow-button">
+                    Takip et
+                </button>
+            </div>
+
+            <div class="user">
+                <a class="username" href="/psikoloji_test2/">
+                    @psikoloji_test2
+                </a>
+
+                <button class="follow-button">
+                    Takip et
+                </button>
+            </div>
+
+            <div class="user">
+                <a class="username" href="/psikoloji_test3/">
+                    @psikoloji_test3
+                </a>
+
+                <button class="follow-button">
+                    Takip et
+                </button>
+            </div>
+
+            <div class="user">
+                <a class="username" href="/psikoloji_test4/">
+                    @psikoloji_test4
+                </a>
+
+                <button class="follow-button">
+                    Takip et
+                </button>
+            </div>
+
+            <div class="user">
+                <a class="username" href="/psikoloji_test5/">
+                    @psikoloji_test5
+                </a>
+
+                <button class="follow-button">
+                    Takip et
+                </button>
+            </div>
+
+            <div class="user">
+                <a class="username" href="/psikoloji_test6/">
+                    @psikoloji_test6
+                </a>
+
+                <button class="follow-button">
+                    Takip et
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelectorAll(".follow-button").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const current = button.textContent.trim();
+
+                if (current === "Takip et") {
+                    button.textContent = "İstek Gönderildi";
+                } else if (current === "İstek Gönderildi") {
+                    button.textContent = "Takiptesin";
+                } else {
+                    button.textContent = "Takip et";
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

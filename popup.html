@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Instagram Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+
+            <div class="logo">IT</div>
+
+            <div>
+                <h1>Instagram Tracker</h1>
+                <p>Takip sürecini kolayca yönet.</p>
+            </div>
+
+        </header>
+
+        <!-- İstatistikler -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <span id="totalCount">0</span>
+                <small>Toplam</small>
+            </div>
+
+            <div class="stat-card pending">
+                <span id="pendingCount">0</span>
+                <small>Bekleyen</small>
+            </div>
+
+            <div class="stat-card requested">
+                <span id="requestedCount">0</span>
+                <small>İstek gönderildi</small>
+            </div>
+
+            <div class="stat-card following">
+                <span id="followingCount">0</span>
+                <small>Takip ediliyor</small>
+            </div>
+
+        </section>
+
+        <!-- Manuel kullanıcı ekleme -->
+        <section class="add-section">
+
+            <h2>Yeni kullanıcı ekle</h2>
+
+            <input
+                type="text"
+                id="usernameInput"
+                placeholder="Instagram kullanıcı adı"
+            >
+
+            <input
+                type="text"
+                id="sourceInput"
+                placeholder="Kaynak sayfa (ör. psikoloji_blog)"
+            >
+
+            <button id="addButton" class="primary-button">
+                + Kullanıcı ekle
+            </button>
+
+        </section>
+
+        <!-- Toplu aktarım -->
+        <section class="import-section">
+
+            <h2>Toplu kullanıcı aktarımı</h2>
+
+            <textarea
+                id="bulkInput"
+                placeholder="Kullanıcı adlarını alt alta yaz...&#10;ornek1&#10;ornek2&#10;ornek3"
+                rows="4"
+            ></textarea>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept=".csv,.txt"
+            >
+
+            <button id="importButton" class="secondary-button">
+                Listeyi içe aktar
+            </button>
+
+        </section>
+
+        <!-- Kullanıcı listesi -->
+        <section class="list-section">
+
+            <div class="list-heading">
+
+                <h2>Kullanıcılarım</h2>
+
+                <span id="visibleCount">0 kayıt</span>
+
+            </div>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Kullanıcı ara..."
+            >
+
+            <!-- Durum filtreleri -->
+            <div class="filters">
+
+                <button
+                    class="filter active"
+                    data-filter="all"
+                >
+                    Tümü
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="pending"
+                >
+                    Bekleyen
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="requested"
+                >
+                    İstek gönderildi
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="following"
+                >
+                    Takip ediliyor
+                </button>
+
+            </div>
+
+            <div id="userList" class="user-list"></div>
+
+            <div id="emptyMessage" class="empty-message">
+                Henüz kullanıcı eklenmedi.
+            </div>
+
+        </section>
+
+        <!-- Veri yönetimi -->
+        <section class="backup-section">
+
+            <h2>Veri yönetimi</h2>
+
+            <button
+                id="backupButton"
+                class="backup-button"
+            >
+                JSON yedeği indir
+            </button>
+
+            <label
+                for="restoreInput"
+                class="restore-button"
+            >
+                JSON yedeğini geri yükle
+            </label>
+
+            <input
+                type="file"
+                id="restoreInput"
+                accept=".json,application/json"
+                hidden
+            >
+
+            <button
+                id="exportButton"
+                class="export-button"
+            >
+                CSV olarak dışa aktar
+            </button>
+
+            <p class="backup-info">
+                JSON: Tam yedekleme ve geri yükleme.
+                <br>
+                CSV: Tablo biçiminde veri aktarımı.
+            </p>
+
+        </section>
+
+        <footer>
+
+            <p>Instagram Tracker · v1.2.0</p>
+
+        </footer>
+
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/popup.js"></script>
+
+</body>
+
+</html>
