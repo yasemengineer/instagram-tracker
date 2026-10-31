@@ -1,5 +1,3 @@
----
-
 ### 2. PRIVACY_POLICY.md
 
 ```markdown
