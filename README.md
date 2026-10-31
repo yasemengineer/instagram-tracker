@@ -9,7 +9,7 @@ A lightweight, privacy-focused Chrome extension that locally compares your Insta
 
 ## Features
 
--**Find Unfollowers:** Instantly lists users you follow who do not follow you back.
+- **Find Unfollowers:** Instantly lists users you follow who do not follow you back.
 - **Fans:** Displays accounts that follow you, but you do not follow back.
 - **Lost & New Followers:** Locally analyzes changes and differences between two scans or imports.
 - **Import / Export:** Easily backup or import your follower lists in JSON format.
